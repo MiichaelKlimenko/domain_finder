@@ -1,3 +1,5 @@
+import sys
+
 from crtsh import crtshAPI
 import re
 import requests
@@ -42,11 +44,15 @@ try:
     results = crtshAPI().search(company)
 except Exception:
     print("Problems with crt.sh")
-    exit(-1)
+    results = []
 
 all_found = ""
 
 domains = {}
+
+if len(results) == 0:
+    print("Nothing found.")
+    sys.exit(0)
 
 for result in results:
     all_found += result['common_name'] + "\n"
