@@ -91,3 +91,8 @@ hackeronesucks.com
 hackeronezendesk.com
 weardhackerone.com
 ```
+
+To scan lots of domains at one time:
+```
+./lots_domains.sh companies.txt
+```
